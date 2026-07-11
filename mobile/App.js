@@ -8,7 +8,7 @@ export default function App() {
 
   useEffect(() => {
     // If testing on a physical device, replace localhost with your computer's local IP address
-    fetch('http://localhost:3001/api/status')
+    fetch('http://192.168.1.75:3000/api/status')
       .then(response => response.json())
       .then(data => {
         setApiStatus(data.status ? `Connected to Database!\nTime: ${data.dbTime}` : 'API Connected, DB Failed');
