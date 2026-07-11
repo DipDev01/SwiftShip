@@ -9,4 +9,10 @@ export class AppController {
   async getStatus() {
     return this.appService.checkDatabaseConnection();
   }
+  @Get('hello')
+  getHello() {
+    return {
+      message: 'Hello World!',
+    };
+  }
 }
