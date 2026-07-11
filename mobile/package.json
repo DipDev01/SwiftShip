@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@expo/metro-runtime": "~57.0.3",
-    "expo": "~57.0.4",
-    "expo-status-bar": "~57.0.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-native": "0.86.0",
+    "@expo/metro-runtime": "~6.1.2",
+    "expo": "^54.0.35",
+    "expo-status-bar": "~3.0.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
     "react-native-web": "^0.21.2"
   },
   "scripts": {
