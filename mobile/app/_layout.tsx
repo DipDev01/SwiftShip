@@ -1,27 +1,28 @@
 import { Redirect, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import {GestureHandlerRootView} from 'react-native-gesture-handler'
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-function AuthGuard(){
-  const {isSignedIn} = {isSignedIn: false}
+function AuthGuard() {
+  const { isSignedIn } = { isSignedIn: false };
 
-  if(!isSignedIn){
-    return <Redirect href="/(auth)"/>
-  } else if(isSignedIn){
-    return <Redirect href="/(tabs)"/>
+  if (!isSignedIn) {
+    return <Redirect href="/pages/(auth)" />;
+  } else if (isSignedIn) {
+    return <Redirect href="/pages/(tabs)" />;
   }
 }
 
 export default function RootLayout() {
-  
-  return <GestureHandlerRootView style={{flex: 1}}>
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <AuthGuard />
 
-    <AuthGuard/>
-
-    <Stack screenOptions={{headerShown: false}}>
-      <Stack.Screen name="(auth)"/>
-      <Stack.Screen name="(tabs)"/>
-    </Stack>
-    <StatusBar style='dark'/>
-    </GestureHandlerRootView >
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="pages/(auth)" />
+        <Stack.Screen name="pages/(otp)/index" />
+        <Stack.Screen name="pages/(tabs)" />
+      </Stack>
+      <StatusBar style="dark" />
+    </GestureHandlerRootView>
+  );
 }
