@@ -36,3 +36,6 @@ Once the Expo packager is running, you can:
 - Press **`i`** to open it in an iOS Simulator (if you are on a Mac).
 - Press **`a`** to open it in an Android Emulator.
 - Press **`w`** to open it in your web browser.
+
+
+Git Branch issue code: git checkout -b auth-page origin/auth-page
