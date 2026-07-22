@@ -10,7 +10,7 @@ import { User } from '../users/user.entity';
   imports: [
     TypeOrmModule.forFeature([User]),
     JwtModule.register({
-      secret: 'swiftship-secret-key',
+      secret: process.env.JWT_SECRET,
       signOptions: {
         expiresIn: '7d',
       },
