@@ -5,6 +5,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "expo-router/src/*": [
+        "./node_modules/expo-router/build/*"
       ]
     }
   },

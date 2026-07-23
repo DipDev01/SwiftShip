@@ -7,4 +7,6 @@ async function bootstrap() {
   await app.listen(3000, '0.0.0.0');
   console.log(`NestJS Backend is running on port 3000`);
 }
-bootstrap();
+bootstrap().catch((err) => {
+  console.error(err);
+});

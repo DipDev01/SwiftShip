@@ -7,17 +7,20 @@ export class AppService {
 
   async checkDatabaseConnection() {
     try {
-      const result = await this.dataSource.query('SELECT NOW()');
+      const result =
+        await this.dataSource.query<Array<{ now: Date }>>('SELECT NOW()');
       return {
         status: true,
         message: 'Connected to Database',
         dbTime: result[0].now,
       };
-    } catch (error) {
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : String(error);
       throw new InternalServerErrorException({
         status: false,
         message: 'Database connection failed',
-        error: error.message,
+        error: errorMessage,
       });
     }
   }
